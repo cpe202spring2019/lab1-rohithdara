@@ -29,11 +29,11 @@ def bin_search(target, low, high, int_list):  # must use recursion
    If target is not found returns None. If list is None, raises ValueError """
    if int_list == None:
       raise ValueError
+   if int_list == []:
+      return None
    if int_list[((high+low)//2)] == target:
       return (high+low)//2
-   if low > high:
-      return None
-   if low == high:
+   if low >= high:
       return None
    if target < int_list[((high+low)//2)]:
       return bin_search(target, low, ((high+low)//2)-1, int_list)

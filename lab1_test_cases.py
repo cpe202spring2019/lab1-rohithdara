@@ -108,6 +108,10 @@ class TestLab1(unittest.TestCase):
     def test_bin_search_end(self):
         list_val = [1,2,3,4,6,7,8,9]
         self.assertEqual(bin_search(9,0,len(list_val)-1, list_val), 7)
+    def test_bin_search_empty_list(self):
+    #test case with the similar low and high
+        list_val =[]
+        self.assertEqual(bin_search(7, 0, 0, list_val), None)
 
 
 
