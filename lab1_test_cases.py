@@ -94,10 +94,20 @@ class TestLab1(unittest.TestCase):
     #Tests if there is only 1 item in the list (high will equal low)
         list_val = [1]
         self.assertEqual(bin_search(2,0,len(list_val)-1, list_val), None)
+        list_val = [2]
+        self.assertEqual(bin_search(2,0,len(list_val)-1, list_val),0)
+    def test_bin_search_high_greater_low(self):
+        list_val = [1,2,3,4,6,7,8,9]
+        self.assertEqual(bin_search(9,5,2, list_val), None)
     def test_bin_search_high_minus_low(self):
     #Tests if there are only 2 items in the list (high-low = 1)
         list_val = [1,2]
         self.assertEqual(bin_search(1,0,len(list_val)-1,list_val),0)
+        list_val = [1,2]
+        self.assertEqual(bin_search(3,0,len(list_val)-1,list_val),None)
+    def test_bin_search_end(self):
+        list_val = [1,2,3,4,6,7,8,9]
+        self.assertEqual(bin_search(9,0,len(list_val)-1, list_val), 7)
 
 
 
